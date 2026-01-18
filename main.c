@@ -3,29 +3,28 @@
 
 int main()
 {
-   int age =0;
-   float gpa=0.0f;
-   char grade='\0';
-   char name[30]="";
+   // SOPPING CART PROGRAM
 
-   printf("Enter your age:");
-   
-   scanf("%d", &age);
-   printf("Enter your gpa:");
-   scanf("%f", &gpa);
-   printf("Enter your grade:");
-   scanf(" %c", &grade); // Here need space " %c"
+   char item[50]="";
+   float price = 0.0;
+   int quantity=0;
+   char currency='$';
+   float total=0.0f;
+
+   printf("What item would you like to buy?:\n");
    getchar();
+   fgets(item, sizeof(item), stdin);
+   item[strlen(item)-1]='\0';
 
-   printf("Enter your name:");
-//    scanf("%s", &name);
-   fgets(name, sizeof(name), stdin);
-   // name[strlen(name)-1] = '\0';
-   name[strcspn(name, "\n")] = '\0';
+   printf("What is the the price for each?:\n");
+   scanf("%f", &price);
+   printf("How many would you like?:\n");
+   scanf("%d", &quantity);
 
-   printf("%s\n", name);
-   printf("%d\n", age);
-   printf("%f\n", gpa);
-   printf("%c\n", grade);
-    return 0;
+   total=price*quantity;
+
+   printf("Total: %.2f%c", total, currency);
+   
+
+   return 0;
 }
