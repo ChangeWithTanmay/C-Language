@@ -1,40 +1,32 @@
 #include <stdio.h>
-#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
 int main()
 {
-   // MAD LIBS GAME
+   int x = 2;
+   float x=3.14;
 
-   char noun[50] = "";
-   char verb[50] = "";
-   char abjective1[50]="";
-   char abjective2[50]="";
-   char abjective3[50]="";
 
-   printf("Enter an adjective (description): ");
-   fgets(abjective1, sizeof(abjective1), stdin);
-   abjective1[strlen(abjective1)-1]='\0';
+   x = sqrt(x); // 9 -> 3
+   x = pow(x, 4); // 2^4 -> 16
 
-   printf("Enter a noun (animal or person):");
-   fgets(noun, sizeof(noun), stdin);
-   noun[strlen(noun)-1]='\0';
+   x = round(x); // 3.14 -> 3.000000
+   x = ceil(x); // 3.14 -> 4.000000
+   x = floor(x); // 3.14 -> 3.000000
 
-   printf("Enter an adjective (description): ");
-   fgets(abjective2, sizeof(abjective2), stdin);
-   abjective2[strlen(abjective2)-1]='\0';
+   /* Use #include <stdlib.h> */
+   int x = -3;
+   x = abs(x); // -3 -> 3 but use #include <stdlib.h>
 
-   printf("Enter a verb (ending w/ -ing): ");
-   fgets(verb, sizeof(verb), stdin);
-   verb[strlen(verb)-1]='\0';
+   float x = 45;
 
-   printf("Enter an adjective (description): ");
-   fgets(abjective3, sizeof(abjective3), stdin);
-   abjective3[strlen(abjective3)-1]='\0';
+   x=log(x); // 3 -> 1.098612
+   x = sin(x); // 45 -> 0.850904
+   x = cos(x); // 45 -> 0.525322
+   x = tan(x); // 45 -> 1.619775
 
-   printf("\nToday, I went to a %s zoo\n", abjective1);
-   printf("In an exhibit, I saw a %s\n",  noun);
-   printf("%s was %s and %s!\n", noun, abjective2, verb);
-   printf("I was %s!\n", abjective3);
+   printf("%f", x); // 45 -> 0.850904
 
    return 0;
 }
