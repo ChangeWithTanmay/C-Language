@@ -25,7 +25,7 @@ int main()
 
    printf("You have bought %d pizza\n", quantity);
 
-   printf("Total: %c%.2f", currency, total);
+   printf("%c%.2f", currency, total);
 
 
    return 0;
