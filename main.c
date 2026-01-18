@@ -23,8 +23,8 @@ int main()
 
    total=price*quantity;
 
-   printf("Total: %.2f%c", total, currency);
-   
+   printf("Total: %c%.2f", currency, total);
+
 
    return 0;
 }
