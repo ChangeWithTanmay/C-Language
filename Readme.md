@@ -10,6 +10,14 @@ A reusable container for a value. Behaves as if it ware the value it contains.
     - char
     - char[]
     - bool
+- Use:
+    ```c
+    printf("%d\n", age);
+    printf("%f\n", price);
+    printf("%lf\n", pi);
+    printf("%c\n", currency);
+    printf("%s\n", name);
+    ```
 
 ```c
 // int = whole numbers (4 bytes in modern system)
@@ -99,6 +107,105 @@ int main(){
     
 
 
+    return 0;
+}
+```
+
+## Formate specifier
+Formate specifier = Special tokens that begin with a % symbol, followed by a character that specifies the data type and optional modifiers (width, precision, flag). They control how data is desplayed or interpreted.
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+    // Formate specifier = Special tokens that begin with a % symbol, followed by a character that specifies the data type and optional modifiers (width, precision, flag). They control how data is desplayed or interpreted.
+
+        int num=1, num1=10, num2=100;
+
+        int num3 = -200;
+
+        printf("%3d\n", num); //  1
+        printf("%3d\n", num1);// 10
+        printf("%3d\n", num2);//100
+
+        printf("\n\n");
+
+        printf("%04d\n", num); //0001
+        printf("%04d\n", num1);//0010
+        printf("%04d\n", num2);//0100
+
+        printf("\n\n");
+
+        printf("%+d\n", num); //+1
+        printf("%+d\n", num1);//+10
+        printf("%+d\n", num2);//+100
+        printf("%+d\n", num3);//-200
+
+        printf("\n\n");
+
+        printf("%-d\n", num); //1
+        printf("%-d\n", num1);//10
+        printf("%-d\n", num2);//100
+        printf("%-d\n", num3);//-200
+
+
+
+    // %7.2f, In 3.50 -> (3 spaces + 3.50 = 7 characters)
+    float price1 = 19.99;
+    float price2 = 1.50;
+    float price3 = -100.00;
+
+    printf("%7.2f\n", price1); //  19.99 -> (3 spaces + 3.50 = 7 characters)
+    printf("%7.2f\n", price2); //   1.50
+    printf("%7.2f\n", price3); //-100.00
+
+    printf("%0.2f\n", price1); //  19.99
+    printf("%0.2f\n", price2); //   1.50
+    printf("%0.2f\n", price3); //-100.00
+
+
+    return 0;
+}
+
+```
+
+## User input
+fgets(name, sizeof(name), stdin);
+name[strlen(name)-1] = '\0';
+getchar();
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   int age =0;
+   float gpa=0.0f;
+   char grade='\0';
+   char name[30]="";
+
+   printf("Enter your age:");
+   
+   scanf("%d", &age);
+   printf("Enter your gpa:");
+   scanf("%f", &gpa);
+   printf("Enter your grade:");
+   scanf(" %c", &grade); // Here need space " %c"
+   getchar();
+
+   printf("Enter your name:");
+//    scanf("%s", &name);
+   fgets(name, sizeof(name), stdin);
+//    name[strlen(name)-1] = '\0';
+    name[strcspn(name, "\n")] = '\0';
+
+   printf("%s\n", name);
+   printf("%d\n", age);
+   printf("%f\n", gpa);
+   printf("%c\n", grade);
     return 0;
 }
 ```
