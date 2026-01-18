@@ -23,6 +23,8 @@ int main()
 
    total=price*quantity;
 
+   printf("You have bought %d pizza\n", quantity);
+
    printf("Total: %c%.2f", currency, total);
 
 
