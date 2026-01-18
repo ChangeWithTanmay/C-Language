@@ -17,7 +17,6 @@ int main()
    float total=0.0f;
 
    printf("What item would you like to buy?:\n");
-   getchar();
    fgets(item, sizeof(item), stdin);
    item[strlen(item)-1]='\0';
 
@@ -28,7 +27,7 @@ int main()
 
    total=price*quantity;
 
-   printf("You have bought %d pizza\n", quantity);
+   printf("You have bought %d %s\n", quantity, item);
 
    printf("%c%.2f", currency, total);
 

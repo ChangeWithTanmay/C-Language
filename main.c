@@ -11,19 +11,19 @@ int main()
    char currency='$';
    float total=0.0f;
 
-   printf("What item would you like to buy?:\n");
-   getchar();
+   printf("What item would you like to buy?:");
+   
    fgets(item, sizeof(item), stdin);
    item[strlen(item)-1]='\0';
 
-   printf("What is the the price for each?:\n");
+   printf("What is the the price for each?:");
    scanf("%f", &price);
-   printf("How many would you like?:\n");
+   printf("How many would you like?:");
    scanf("%d", &quantity);
 
    total=price*quantity;
 
-   printf("You have bought %d pizza\n", quantity);
+   printf("You have bought %d %s\n", quantity, item);
 
    printf("%c%.2f", currency, total);
 
