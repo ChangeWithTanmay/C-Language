@@ -1,38 +1,38 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-   // WEIGHT CONVERTER PROGRAM
+   // TEMPERATURE CONVERSION PROGRAM
 
-   int choice = 0;
+   char choice = '\0';
+   float fahrenheit = 0.0f;
+   float celsius = 0.0f;
 
-   float pounds = 0.0f;
-   float kilograms = 0.0f;
+   printf("Temperature Conversion Program\n");
+   printf("C. Celsius to Fahrenheit\n");
+   printf("F. Fahrenheit to Celsius\n");
+   printf("Is the temp in celsius (C) or Fahrenheit (F)?: ");
+   scanf("%c", &choice);
 
-   printf("Weigth Conversion Calculator\n");
-   printf("1. Kilograms to Pounds\n");
-   printf("2. Pounds to kilograms\n");
-   printf("Enter your choice (1 or 2): ");
-   scanf("%d", &choice);
-
-   if(choice == 1){
-      // Kilogram to pounds
-      printf("Enter the weight in Kilogram: ");
-      scanf("%f", &kilograms);
-      pounds = kilograms * 2.20462;
-      printf("%.2f kilogram is equal to %.2f pounds\n", kilograms, pounds);
-   }
-   else if (choice == 2)
+   if (choice == 'C')
    {
-      // Pounds to Kilograms
-      printf("Enter the weight in pounds: ");
-      scanf("%f", &pounds);
-      kilograms = pounds / 2.20462;
-      printf("%.2f pounds is equal to %.2f kilogram\n", pounds, kilograms);
-   } else{
-      printf("Invalid choose, Please enter 1 or 2");
+      printf("Enter the temperture in Celsius: ");
+      scanf("%f", &celsius);
+      fahrenheit = (celsius * 9/5) + 32; // C to F
+      printf("%.1f Celsius is equal to %.1f Fahrenheit", celsius, fahrenheit);
    }
-   
+   else if (choice == 'F')
+   {
+      printf("Enter the temperture in Fahrenheit: ");
+      scanf("%f", &fahrenheit);
+      celsius = (fahrenheit - 32) * 5 / 9; // C to F
+      printf("%.1f Fahrenheit is equal to %.1f Celsius",  fahrenheit, celsius);
+   }
+   else
+   {
+      printf("Invalid choice! Please select C or F\n");
+   }
 
    return 0;
 }
