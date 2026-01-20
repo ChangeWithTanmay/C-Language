@@ -1,37 +1,39 @@
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-   // TEMPERATURE CONVERSION PROGRAM
+   // switch = An alternative to using many if-else statements. ore efficient W/ fixed integer values
 
-   char choice = '\0';
-   float fahrenheit = 0.0f;
-   float celsius = 0.0f;
+   char dayOfWeek = '\0';
 
-   printf("Temperature Conversion Program\n");
-   printf("C. Celsius to Fahrenheit\n");
-   printf("F. Fahrenheit to Celsius\n");
-   printf("Is the temp in celsius (C) or Fahrenheit (F)?: ");
-   scanf("%c", &choice);
-
-   if (choice == 'C')
-   {
-      printf("Enter the temperture in Celsius: ");
-      scanf("%f", &celsius);
-      fahrenheit = (celsius * 9/5) + 32; // C to F
-      printf("%.1f Celsius is equal to %.1f Fahrenheit", celsius, fahrenheit);
-   }
-   else if (choice == 'F')
-   {
-      printf("Enter the temperture in Fahrenheit: ");
-      scanf("%f", &fahrenheit);
-      celsius = (fahrenheit - 32) * 5 / 9; // C to F
-      printf("%.1f Fahrenheit is equal to %.1f Celsius",  fahrenheit, celsius);
-   }
-   else
-   {
-      printf("Invalid choice! Please select C or F\n");
+   printf("Enter a day of the week (M, T, W, R, F, S, U): ");
+   scanf("%c", &dayOfWeek);
+   
+   switch (dayOfWeek){
+   case 'M':
+      printf("It is Monday");
+      break;
+   case 'T':
+      printf("It is Tuesday");
+      break;
+   case 'W':
+      printf("It is Wednessday");
+      break;
+   case 'R':
+      printf("It is Thursday");
+      break;
+   case 'F':
+      printf("It is Friday");
+      break;
+   case 'S':
+      printf("It is Saturday");
+      break;
+   case 'U':
+      printf("It is Sunday");
+      break;
+   default:
+   printf("Please only enter a character (M, T, W, R, F, S, U)");
+      break;
    }
 
    return 0;

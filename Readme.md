@@ -328,3 +328,92 @@ int main()
    return 0;
 }
 ```
+
+## SWITCHES
+
+```c
+#include <stdio.h>
+
+int main()
+{
+   // switch = An alternative to using many if-else statements. ore efficient W/ fixed integer values
+
+   int dayOfWeek = 0;
+
+   printf("Enter a day of the week 1-7: ");
+   scanf("%d", &dayOfWeek);
+   
+   switch (dayOfWeek){
+   case 1:
+      printf("It is Monday");
+      break;
+   case 2:
+      printf("It is Tuesday");
+      break;
+   case 3:
+      printf("It is Wednessday");
+      break;
+   case 4:
+      printf("It is Thursday");
+      break;
+   case 5:
+      printf("It is Friday");
+      break;
+   case 6:
+      printf("It is Saturday");
+      break;
+   case 7:
+      printf("It is Sunday");
+      break;
+   default:
+   printf("Please Enter number (1 to 7)");
+      break;
+   }
+
+   return 0;
+}
+```
+
+```c
+#include <stdio.h>
+
+int main()
+{
+   // switch = An alternative to using many if-else statements. ore efficient W/ fixed integer values
+
+   char dayOfWeek = '\0';
+
+   printf("Enter a day of the week (M, T, W, R, F, S, U): ");
+   scanf("%c", &dayOfWeek);
+   
+   switch (dayOfWeek){
+   case 'M':
+      printf("It is Monday");
+      break;
+   case 'T':
+      printf("It is Tuesday");
+      break;
+   case 'W':
+      printf("It is Wednessday");
+      break;
+   case 'R':
+      printf("It is Thursday");
+      break;
+   case 'F':
+      printf("It is Friday");
+      break;
+   case 'S':
+      printf("It is Saturday");
+      break;
+   case 'U':
+      printf("It is Sunday");
+      break;
+   default:
+   printf("Please only enter a character (M, T, W, R, F, S, U)");
+      break;
+   }
+
+   return 0;
+}
+```
+
