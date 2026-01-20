@@ -1,32 +1,50 @@
 #include <stdio.h>
-#include <stdbool.h>
 
-int main()
-{
+int main() {
 
-   float price = 10.00;
-   bool isStudent = false; // 10% discount
-   bool isSinior = true;  // 20% discount
+   // CALCULATOR PROGRAM
 
-   // student = $9
-   // senior = $8
-   // student + sinior = $7
+   char operator = '\0';
+   double num1 = 0.0;
+   double num2 = 0.0;
+   double result = 0.0;
 
-   if (isStudent) {
-      if (isSinior) {
-         printf("You get a student discount of 10% \n");
-         printf("You get a sinior discount of 20% \n");
-         price *= 0.7;
-      } else
-      {
-         printf("You get a student discount of 10% \n");
-         price *= 0.9;
+   printf("Enter the first number: ");
+   scanf("%lf", &num1);
+   printf("Enter Oprator (+, -, /, *): ");
+   getchar();
+   scanf("%c", &operator);
+   printf("Enter the second number: ");
+   scanf("%lf", &num2);
+
+   switch (operator)
+   {
+   case '+':
+      result = num1 + num2;
+      break;
+
+   case '-':
+      result = num1 - num2;
+      break;
+
+   case '/':
+      if(num2 == 0){
+         printf("You can't divide by Zero\n");
+      } else{
+         result = num1 / num2;
       }
-   } else {
-      printf("You get a sinior discount of 20% \n");
-      price *= 0.8;
+      break;
+   
+   case '*':
+      result = num1 * num2;
+      break;
+   
+   default:
+      printf("Invalid Oprator");
+      break;
    }
 
-   printf("The price of a ticket is: $%0.2f", price);
+   printf("Result: %.4lf", result);
+
    return 0;
 }
