@@ -1,40 +1,32 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main()
 {
-   // switch = An alternative to using many if-else statements. ore efficient W/ fixed integer values
 
-   char dayOfWeek = '\0';
+   float price = 10.00;
+   bool isStudent = false; // 10% discount
+   bool isSinior = true;  // 20% discount
 
-   printf("Enter a day of the week (M, T, W, R, F, S, U): ");
-   scanf("%c", &dayOfWeek);
-   
-   switch (dayOfWeek){
-   case 'M':
-      printf("It is Monday");
-      break;
-   case 'T':
-      printf("It is Tuesday");
-      break;
-   case 'W':
-      printf("It is Wednessday");
-      break;
-   case 'R':
-      printf("It is Thursday");
-      break;
-   case 'F':
-      printf("It is Friday");
-      break;
-   case 'S':
-      printf("It is Saturday");
-      break;
-   case 'U':
-      printf("It is Sunday");
-      break;
-   default:
-   printf("Please only enter a character (M, T, W, R, F, S, U)");
-      break;
+   // student = $9
+   // senior = $8
+   // student + sinior = $7
+
+   if (isStudent) {
+      if (isSinior) {
+         printf("You get a student discount of 10% \n");
+         printf("You get a sinior discount of 20% \n");
+         price *= 0.7;
+      } else
+      {
+         printf("You get a student discount of 10% \n");
+         price *= 0.9;
+      }
+   } else {
+      printf("You get a sinior discount of 20% \n");
+      price *= 0.8;
    }
 
+   printf("The price of a ticket is: $%0.2f", price);
    return 0;
 }
