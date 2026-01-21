@@ -454,8 +454,47 @@ int main()
 }
 ```
 
-## m
+## LOGICAL OPERATORS
+// Logical Operators = Used to combine or modify boolean expressions.
+
+   // && = AND
+   // || = OR
+   // ! = NOT
 
 ```c
+#include <stdio.h>
 
+int main()
+{
+
+   int temp = 1000;
+
+   if (temp >= 30 || temp <= 0)
+   {
+      printf("The temperature is BAD");
+   }
+   else
+   {
+      printf("The temperatue is GOOD");
+   }
+
+   return 0;
+}
+```
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+
+   bool isSunny = true;
+
+   if(isSunny){
+      printf("It is sunney");
+   } else {
+      printf("It is cloudy");
+   }
+
+   return 0;
+}
 ```
