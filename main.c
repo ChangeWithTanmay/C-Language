@@ -1,11 +1,18 @@
 #include <stdio.h>
-#include <stdbool.h>
 
-int main() {
-
-   // function = A reusable section of code that can be invoke "called" Arguments can be sent to a function so tha it can use them.
-
+int getMax(int x, int y){
+   if (x >= y){
+      return x;
+   } else{
+      return y;
+   }
    
+}
+   
+int main(){
 
+   int max = getMax(2, 3);
+   printf("Max: %d", max);
+   
    return 0;
 }

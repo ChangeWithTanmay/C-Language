@@ -498,3 +498,112 @@ int main() {
    return 0;
 }
 ```
+
+## Functions
+// function = A reusable section of code that can be invoke "called" Arguments can be sent to a function so tha it can use them.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void happyBirthday(char name[], int age){
+   printf("\nHappy birthday to you!\n");
+   printf("Happy birthday to you!\n");
+   printf("Happy birthday dear %s!\n", name);
+   printf("Happy birthday to you!\n");
+   printf("You age %d years old!\n", age);
+}
+
+int main() {
+
+   char name[50] = "";
+   int age = 0;
+
+   printf("Enter your name: ");
+   fgets(name, sizeof(name), stdin);
+   name[strlen(name)-1] = '\0';
+
+   printf("Enter your age: ");
+   scanf("%d", &age);
+
+   happyBirthday(name, age);
+   
+   return 0;
+}
+```
+
+## Return
+// Return = return a value back to where you call a function
+```c
+#include <stdio.h>
+
+double cube(double num){
+   return num * num * num;
+}
+
+double square(double num){
+   return num * num;
+}
+
+double main() {
+
+   double x = square(2.4);
+   double y = square(3.7);
+   double z = square(4.9);
+   double P = cube(4.9);
+
+   printf("%.2lf\n", x);
+   printf("%.2lf\n", y);
+   printf("%.2lf\n", z);
+   printf("%.2lf\n", P);
+
+   return 0;
+}
+```
+
+Bool
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+bool ageChecker(int age){
+   if(age >= 18){
+      return true;
+   } else{
+      return false;
+   }
+}
+
+int main(){
+   int age = 21;
+
+   if(ageChecker(age)){
+      printf("You may SignUp");
+   } else{
+      printf("You must be 18+ sign up");
+   }
+
+   return 0;
+}
+```
+
+```c
+#include <stdio.h>
+
+int getMax(int x, int y){
+   if (x >= y){
+      return x;
+   } else{
+      return y;
+   }
+   
+}
+   
+int main(){
+
+   int max = getMax(2, 3);
+   printf("Max: %d", max);
+   
+   return 0;
+}
+```
