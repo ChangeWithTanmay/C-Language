@@ -500,7 +500,7 @@ int main() {
 ```
 
 ## Functions
-// function = A reusable section of code that can be invoke "called" Arguments can be sent to a function so tha it can use them.
+<h4>function = A reusable section of code that can be invoke "called" Arguments can be sent to a function so tha it can use them.</h4>
 
 ```c
 #include <stdio.h>
@@ -533,7 +533,8 @@ int main() {
 ```
 
 ## Return
-// Return = return a value back to where you call a function
+<h4>Return = return a value back to where you call a function</h4>
+
 ```c
 #include <stdio.h>
 
@@ -561,7 +562,8 @@ double main() {
 }
 ```
 
-Bool
+<h3>Bool</h3>
+
 ```c
 #include <stdio.h>
 #include <stdbool.h>
@@ -607,3 +609,99 @@ int main(){
    return 0;
 }
 ```
+## Variable scope
+<h4>Variable Scope = Refers to where a variable is recogniged and accessable. Variable can shere the same name if they 're in diffent scope {}.</h4>
+
+
+<h3>1. Local Scope </h3> 
+
+```c
+#include <stdio.h>
+
+int add(int a, int b){
+   int result = a + b;
+
+   return result;
+}
+
+int subtract(int a, int b){
+   int result = a - b;
+
+   return result;
+}
+
+int main(){
+
+   // int result = add(3, 4);
+   int result = subtract(3, 4);
+
+   printf("%d", result);
+
+   return 0;
+}
+```
+
+<h3>2. Global Scope</h3>
+
+```c
+#include <stdio.h>
+
+int result = 0; // Global Scope (hard to debug)
+
+int add(int a, int b){
+   int result = a + b;
+
+   return result;
+}
+
+int subtract(int a, int b){
+   int result = a - b;
+
+   return result;
+}
+
+int main(){
+
+   result = add(4, 9);
+   result = subtract(9, 2);
+
+   printf("%d", result);
+
+   return 0;
+}
+```
+
+## Function prototype
+<h4>Function prototype = Provide the compiler w/ information about a function's: name, return type, and paramiters before its actual definition.Enables type checking and allows functions to be used before they're defined.
+Improves readability, organization, and helps  prevent errors.</h4>
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+// Function Prototype
+void hello(char name[], int age);
+bool ageCheck(int age);
+
+int main(){
+
+   hello("Happy", 54);
+   if(ageCheck(30)){
+      printf("You are old enough to work at the Krusty Krab\n");
+   } else{
+      printf("You must be 16+ to work at the Krusty Krab\n");
+   }
+
+   return 0;
+}
+
+void hello(char name[], int age){
+   printf("Hello %s\n", name);
+   printf("You are %d years old\n", age);
+}
+
+bool ageCheck(int age){
+   if(age>= 18) return true;  
+}
+```
+
