@@ -1,28 +1,20 @@
 #include <stdio.h>
 #include <stdbool.h>
-
-// Function Prototype
-void hello(char name[], int age);
-bool ageCheck(int age);
-
+   
 int main(){
 
-   hello("Happy", 54);
-   if(ageCheck(30)){
-      printf("You are old enough to work at the Krusty Krab\n");
-   } else{
-      printf("You must be 16+ to work at the Krusty Krab\n");
-   }
+   bool isRunning = true;
+   char response ='\0';
 
+   while(isRunning){
+      printf("You are Playing game\n");
+      printf("Would you like to continue? (Y = yes, N = no): \n");
+      scanf(" %c", &response);
+
+      if(response != 'Y' && response != 'y'){
+         isRunning = false;
+      }
+   }
+   
    return 0;
 }
-
-void hello(char name[], int age){
-   printf("Hello %s\n", name);
-   printf("You are %d years old\n", age);
-}
-
-bool ageCheck(int age){
-   if(age>= 18) return true;  
-}
-

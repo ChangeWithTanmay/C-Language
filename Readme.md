@@ -705,3 +705,73 @@ bool ageCheck(int age){
 }
 ```
 
+## While Loop
+
+<h4>While Loop = Continue some code WHILE the condition remains true Condition must be true for us to enter while loop</h4>
+
+```c
+#include <stdio.h>
+   
+int main(){
+
+   int number = 0;
+   
+   while(number <= 0){
+      printf("Enter a Number greater than 0: ");
+      scanf("%d", &number);
+   }
+   
+   return 0;
+}
+```
+
+## do While Loop
+<h4>It is must be run one time.</h4>
+
+```c
+#include <stdio.h>
+   
+int main(){
+
+   int number = 1;
+   
+   do{
+      printf("Enter a Number greater than 0: ");
+      scanf("%d", &number);
+   } while(number <= 0);
+   
+   return 0;
+}
+```
+
+<h3>String</h3>
+
+```c
+#include <stdio.h>
+#include <string.h>
+   
+int main(){
+
+   char name[50]="";
+
+   printf("Enter your name: ");
+   fgets(name, sizeof(name), stdin);
+   name[strlen(name)-1]='\0';
+   
+   while(strlen(name) == 0){
+      printf("Name can't Empty! Please enter your name: ");
+      fgets(name, sizeof(name), stdin);
+      name[strlen(name)-1]='\0';
+   }
+
+   printf("Hello %s", name);
+   
+   return 0;
+}
+```
+
+<h3>Boolean</h3>
+
+```c
+
+```
