@@ -794,3 +794,7 @@ int main(){
    return 0;
 }
 ```
+
+## For Loop
+<h4>For loop = Repeat code a limited # of times for(Initialization; Condition; Update)</h4>
+

@@ -1,20 +1,17 @@
 #include <stdio.h>
-#include <stdbool.h>
-   
-int main(){
 
-   bool isRunning = true;
-   char response ='\0';
-
-   while(isRunning){
-      printf("You are Playing game\n");
-      printf("Would you like to continue? (Y = yes, N = no): \n");
-      scanf(" %c", &response);
-
-      if(response != 'Y' && response != 'y'){
-         isRunning = false;
-      }
+int main()
+{
+   FILE *fc;
+   fc=fopen("student.txt", "w");
+   if(fc==NULL){
+      printf("File open error.\n");
+      return;
    }
+   printf("File open successfully.\n");
+
+   fclose(fc);
+   printf("Now File close successfully.");
    
    return 0;
 }
